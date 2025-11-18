@@ -15,6 +15,7 @@
   html {
     font-family: var(--font-sans);
     font-feature-settings: "rlig" 1, "calt" 1;
+    background-color: #0b0a17;
   }
 
   body {
@@ -22,7 +23,7 @@
   }
 }
 
-/* Custom utility classes for shadcn/ui patterns */
+/* Retro / pixel-art helpers */
 @layer utilities {
   .animate-in {
     animation-name: animateIn;
@@ -42,5 +43,44 @@
     --tw-exit-rotate: initial;
     --tw-exit-translate-x: initial;
     --tw-exit-translate-y: initial;
+  }
+
+  /* Pixel border effect using layered box-shadows (no images) */
+  .pixel-border {
+    position: relative;
+    box-shadow:
+      0 0 0 2px rgba(45, 212, 191, 0.2),
+      0 0 0 4px rgba(79, 70, 229, 0.15),
+      0 6px 0 0 rgba(236, 72, 153, 0.25);
+    border-radius: 8px;
+  }
+
+  .pixel-button {
+    position: relative;
+    box-shadow: 0 6px 0 0 rgba(109, 40, 217, 0.7);
+    transform: translateY(0);
+  }
+  .pixel-button:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 0 rgba(109, 40, 217, 0.7);
+  }
+
+  .pixel-img {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+
+  /* Dithered gradient background for sections */
+  .retro-bg {
+    background: radial-gradient(1200px 600px at 70% -20%, rgba(59,130,246,0.12), transparent 60%),
+                radial-gradient(1000px 500px at -10% 20%, rgba(16,185,129,0.12), transparent 50%),
+                linear-gradient(180deg, #0b0a17 0%, #121026 60%, #0b0a17 100%);
+  }
+
+  .retro-grid {
+    background-image: linear-gradient(rgba(79,70,229,0.15) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(45,212,191,0.12) 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: -1px -1px;
   }
 }

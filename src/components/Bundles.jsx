@@ -19,27 +19,40 @@ function Bundles() {
   }, [])
 
   return (
-    <section className="py-16 bg-gradient-to-b from-[#0b0a17] to-[#121026]">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-pink-200">Special Bundles</h2>
-        <p className="mt-2 text-teal-200/80 max-w-2xl">Get more spins for less. Some bundles include boosted chances for rarer foxes.</p>
+    <section className="py-16 retro-bg">
+      <div className="absolute inset-0 pointer-events-none opacity-30 retro-grid" />
+      <div className="relative max-w-6xl mx-auto px-6">
+        <div className="flex items-end justify-between">
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-pink-200">Special Bundles</h2>
+            <p className="mt-2 text-teal-200/80 max-w-2xl">High-value packs with boosted chances and arcade-grade savings.</p>
+          </div>
+          <div className="hidden sm:flex items-center gap-2 text-[11px] text-teal-300/70">
+            <span className="px-2 py-0.5 rounded bg-purple-500/20 border border-purple-400/30 text-purple-200">Arcade Deal</span>
+            <span className="px-2 py-0.5 rounded bg-emerald-500/20 border border-emerald-400/30 text-emerald-200">Best Value</span>
+          </div>
+        </div>
 
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {bundles.map((b) => (
-            <div key={b.name} className="relative rounded-xl p-5 bg-[#141228] border border-teal-500/20 shadow-[0_10px_30px_rgba(20,18,40,0.5)]">
+            <div key={b.name} className="relative rounded-xl p-5 bg-[#0f0d22] border border-teal-500/20 pixel-border overflow-hidden">
               {b.badge && (
-                <div className="absolute -top-2 right-4 px-2 py-0.5 rounded bg-pink-500 text-white text-xs font-bold shadow">{b.badge}</div>
+                <div className="absolute -top-2 right-4 px-2 py-0.5 rounded bg-pink-500 text-white text-xs font-black shadow">{b.badge}</div>
               )}
-              <h3 className="text-lg font-bold text-white">{b.name}</h3>
-              <p className="mt-1 text-sm text-teal-200/80 min-h-[40px]">{b.description}</p>
-              <div className="mt-4 flex items-center justify-between">
-                <span className="text-pink-300 font-extrabold">{b.price_eth} ETH</span>
-                <span className="text-xs text-teal-300/80">{b.spins} spins</span>
+              <div className="absolute -right-10 -bottom-10 w-40 h-40 rounded-full bg-gradient-to-tr from-purple-600/20 to-teal-400/20" />
+
+              <h3 className="relative text-lg font-black text-white tracking-wide">{b.name}</h3>
+              <p className="relative mt-1 text-sm text-teal-200/80 min-h-[40px]">{b.description}</p>
+              <div className="relative mt-4 flex items-center justify-between">
+                <span className="text-pink-300 font-extrabold text-xl">{b.price_eth} ETH</span>
+                <span className="text-xs px-2 py-0.5 rounded bg-teal-500/20 text-teal-100 border border-teal-300/20">{b.spins} spins</span>
               </div>
               {b.bonus_chance > 0 && (
-                <div className="mt-2 text-xs text-teal-300/80">+{Math.round(b.bonus_chance*100)}% epic/legendary chance</div>
+                <div className="relative mt-2 text-[11px] text-emerald-200 bg-emerald-500/10 border border-emerald-400/20 inline-block px-2 py-0.5 rounded">+{Math.round(b.bonus_chance*100)}% epic/legendary chance</div>
               )}
-              <button className="mt-5 w-full rounded-lg bg-teal-500/20 hover:bg-teal-500/30 text-teal-100 border border-teal-300/20 py-2 font-semibold transition">Buy Bundle</button>
+              <button className="relative mt-5 w-full h-11 rounded bg-gradient-to-b from-teal-400 to-emerald-500 text-[#0b0a17] font-extrabold pixel-button uppercase tracking-wide">
+                Buy Bundle
+              </button>
             </div>
           ))}
         </div>

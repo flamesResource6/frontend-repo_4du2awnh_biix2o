@@ -31,10 +31,10 @@ function Gallery() {
 
         <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
           {items.map((it) => (
-            <div key={it.token_id} className="group rounded-lg overflow-hidden bg-[#141228] border border-teal-500/20 shadow">
+            <div key={it.token_id} className="group rounded-lg overflow-hidden bg-[#141228] border border-teal-500/20 shadow pixel-border">
               <div className="relative">
-                <img src={it.image_url} alt={it.name} className="w-full aspect-square object-cover" loading="lazy" />
-                <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/50 text-white text-xs">#{it.token_id}</div>
+                <img src={it.image_url} alt={it.name} className="w-full aspect-square object-cover pixel-img" loading="lazy" />
+                <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 text-white text-xs font-bold">#{it.token_id}</div>
               </div>
               <div className="p-2 flex items-center justify-between">
                 <span className="text-teal-100 text-sm">{it.name}</span>
