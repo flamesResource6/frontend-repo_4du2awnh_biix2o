@@ -3,16 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flames App</title>
-    <link rel="icon" type="image/x-icon" href="favicon.svg">
+
+    <!-- Primary SEO -->
+    <title>Crypto Foxes | Pixel Art NFT Collection – Mint, Spin, Adopt</title>
+    <meta name="description" content="Crypto Foxes is a retro 8-bit pixel art NFT collection. Spin the gacha, mint unique foxes, and adopt your favorite. Special bundles, rarity tiers, and a vibrant arcade aesthetic." />
+    <meta name="keywords" content="crypto foxes, pixel art nft, 8-bit nft, retro gaming nft, gacha mint, procedural generation, nft mint" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Crypto Foxes | Pixel Art NFT Collection" />
+    <meta property="og:description" content="Spin the gacha and mint unique pixel foxes. Fully responsive with blazing performance." />
+    <meta property="og:image" content="/cover.png" />
+    <meta property="og:url" content="/" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Crypto Foxes | Pixel Art NFT Collection" />
+    <meta name="twitter:description" content="Spin the gacha and mint unique pixel foxes. Fully responsive with blazing performance." />
+    <meta name="twitter:image" content="/cover.png" />
+
+    <!-- Schema Markup: Organization -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Crypto Foxes",
+        "url": "/",
+        "logo": "/favicon.svg",
+        "sameAs": [
+          "https://twitter.com/",
+          "https://discord.gg/"
+        ]
+      }
+    </script>
+
+    <!-- Schema Markup: Product collection -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Collection",
+        "name": "Crypto Foxes NFT Collection",
+        "url": "/",
+        "description": "Procedurally generated pixel art fox NFTs with rarity tiers.",
+        "isPartOf": {
+          "@type": "CreativeWorkSeries",
+          "name": "Crypto Foxes"
+        }
+      }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-mono/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Google Analytics placeholder hook -->
+    <script>
+      // Paste your GA tag here when ready
+      // Example: gtag('config', 'G-XXXXXXX');
+    </script>
   </body>
 </html>
